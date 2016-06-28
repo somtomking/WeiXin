@@ -87,6 +87,9 @@
     <Reference Include="Senparc.Weixin.MP">
       <HintPath>..\Libs\wxSDK\Senparc.Weixin.MP.dll</HintPath>
     </Reference>
+    <Reference Include="Senparc.Weixin.MP.MvcExtension">
+      <HintPath>..\Libs\wxSDK\Senparc.Weixin.MP.MvcExtension.dll</HintPath>
+    </Reference>
     <Reference Include="Senparc.Weixin.Open">
       <HintPath>..\Libs\wxSDK\Senparc.Weixin.Open.dll</HintPath>
     </Reference>
@@ -162,6 +165,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WxController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,9 +228,6 @@
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\weui\src\example\example.less" />
     <Content Include="Content\weui\src\style\base\fn.less" />
     <Content Include="Content\weui\src\style\base\mixin\mobile.less" />
@@ -316,6 +317,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Wx\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -324,6 +326,12 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeiXin.CommonService\WeiXin.CommonService.csproj">
+      <Project>{33de61b1-e9bd-4cf7-881f-6ab3ad4154dd}</Project>
+      <Name>WeiXin.CommonService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
