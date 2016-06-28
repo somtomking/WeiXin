@@ -5,6 +5,19 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeiXin", "WeiXin\WeiXin.csproj", "{C23E5FAD-6E20-4AE5-89E9-A879CF157DAD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wx", "wx", "{EB4CC240-62B5-49CE-98AD-8D0FEBE6962E}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\wxSDK\Senparc.Weixin.dll = Libs\wxSDK\Senparc.Weixin.dll
+		Libs\wxSDK\Senparc.Weixin.MP.dll = Libs\wxSDK\Senparc.Weixin.MP.dll
+		Libs\wxSDK\Senparc.Weixin.MP.MvcExtension.XML = Libs\wxSDK\Senparc.Weixin.MP.MvcExtension.XML
+		Libs\wxSDK\Senparc.Weixin.MP.XML = Libs\wxSDK\Senparc.Weixin.MP.XML
+		Libs\wxSDK\Senparc.Weixin.Open.dll = Libs\wxSDK\Senparc.Weixin.Open.dll
+		Libs\wxSDK\Senparc.Weixin.Open.XML = Libs\wxSDK\Senparc.Weixin.Open.XML
+		Libs\wxSDK\Senparc.Weixin.QY.dll = Libs\wxSDK\Senparc.Weixin.QY.dll
+		Libs\wxSDK\Senparc.Weixin.QY.XML = Libs\wxSDK\Senparc.Weixin.QY.XML
+		Libs\wxSDK\Senparc.Weixin.XML = Libs\wxSDK\Senparc.Weixin.XML
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

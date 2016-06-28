@@ -44,11 +44,52 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.5\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.Weixin">
+      <HintPath>..\Libs\wxSDK\Senparc.Weixin.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin.MP">
+      <HintPath>..\Libs\wxSDK\Senparc.Weixin.MP.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin.Open">
+      <HintPath>..\Libs\wxSDK\Senparc.Weixin.Open.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -129,12 +170,122 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\weui\dist\style\weui.css" />
+    <Content Include="Content\weui\src\example\example.js" />
+    <Content Include="Content\weui\src\example\fragment\actionsheet.html" />
+    <Content Include="Content\weui\src\example\fragment\article.html" />
+    <Content Include="Content\weui\src\example\fragment\button.html" />
+    <Content Include="Content\weui\src\example\fragment\cell.html" />
+    <Content Include="Content\weui\src\example\fragment\dialog.html" />
+    <Content Include="Content\weui\src\example\fragment\home.html" />
+    <Content Include="Content\weui\src\example\fragment\icons.html" />
+    <Content Include="Content\weui\src\example\fragment\msg.html" />
+    <Content Include="Content\weui\src\example\fragment\navbar.html" />
+    <Content Include="Content\weui\src\example\fragment\panel.html" />
+    <Content Include="Content\weui\src\example\fragment\progress.html" />
+    <Content Include="Content\weui\src\example\fragment\searchbar.html" />
+    <Content Include="Content\weui\src\example\fragment\tab.html" />
+    <Content Include="Content\weui\src\example\fragment\tabbar.html" />
+    <Content Include="Content\weui\src\example\fragment\toast.html" />
+    <Content Include="Content\weui\src\example\images\icon_nav_actionSheet.png" />
+    <Content Include="Content\weui\src\example\images\icon_nav_article.png" />
+    <Content Include="Content\weui\src\example\images\icon_nav_button.png" />
+    <Content Include="Content\weui\src\example\images\icon_nav_cell.png" />
+    <Content Include="Content\weui\src\example\images\icon_nav_dialog.png" />
+    <Content Include="Content\weui\src\example\images\icon_nav_icons.png" />
+    <Content Include="Content\weui\src\example\images\icon_nav_msg.png" />
+    <Content Include="Content\weui\src\example\images\icon_nav_panel.png" />
+    <Content Include="Content\weui\src\example\images\icon_nav_progress.png" />
+    <Content Include="Content\weui\src\example\images\icon_nav_search_bar.png" />
+    <Content Include="Content\weui\src\example\images\icon_nav_tab.png" />
+    <Content Include="Content\weui\src\example\images\icon_nav_toast.png" />
+    <Content Include="Content\weui\src\example\images\pic_article.png" />
+    <Content Include="Content\weui\src\example\images\vcode.jpg" />
+    <Content Include="Content\weui\src\example\index.html" />
+    <Content Include="Content\weui\src\example\router.min.js" />
+    <Content Include="Content\weui\src\example\snapshot\button.png" />
+    <Content Include="Content\weui\src\example\snapshot\cell.png" />
+    <Content Include="Content\weui\src\example\snapshot\dialog1.png" />
+    <Content Include="Content\weui\src\example\snapshot\dialog2.png" />
+    <Content Include="Content\weui\src\example\snapshot\grid.png" />
+    <Content Include="Content\weui\src\example\snapshot\icons.png" />
+    <Content Include="Content\weui\src\example\snapshot\progress.png" />
+    <Content Include="Content\weui\src\example\snapshot\qrcode.png" />
+    <Content Include="Content\weui\src\example\snapshot\result.png" />
+    <Content Include="Content\weui\src\example\snapshot\text.png" />
+    <Content Include="Content\weui\src\example\snapshot\toast1.png" />
+    <Content Include="Content\weui\src\example\snapshot\toast2.png" />
+    <Content Include="Content\weui\src\example\zepto.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\weui\src\example\example.less" />
+    <Content Include="Content\weui\src\style\base\fn.less" />
+    <Content Include="Content\weui\src\style\base\mixin\mobile.less" />
+    <Content Include="Content\weui\src\style\base\mixin\setArrow.less" />
+    <Content Include="Content\weui\src\style\base\mixin\setChecked.less" />
+    <Content Include="Content\weui\src\style\base\mixin\setOnepx.less" />
+    <Content Include="Content\weui\src\style\base\mixin\text.less" />
+    <Content Include="Content\weui\src\style\base\reset.less" />
+    <Content Include="Content\weui\src\style\base\variable\global.less" />
+    <Content Include="Content\weui\src\style\base\variable\monokai.less" />
+    <Content Include="Content\weui\src\style\base\variable\weui_button.less" />
+    <Content Include="Content\weui\src\style\base\variable\weui_cell.less" />
+    <Content Include="Content\weui\src\style\base\variable\weui_grid.less" />
+    <Content Include="Content\weui\src\style\base\variable\weui_msg.less" />
+    <Content Include="Content\weui\src\style\base\variable\weui_progress.less" />
+    <Content Include="Content\weui\src\style\icon\weui_font.less" />
+    <Content Include="Content\weui\src\style\icon\weui_icon_font.less" />
+    <Content Include="Content\weui\src\style\weui.less" />
+    <Content Include="Content\weui\src\style\widget\weui_button\weui_btn_default.less" />
+    <Content Include="Content\weui\src\style\widget\weui_button\weui_btn_disabled.less" />
+    <Content Include="Content\weui\src\style\widget\weui_button\weui_btn_global.less" />
+    <Content Include="Content\weui\src\style\widget\weui_button\weui_btn_plain.less" />
+    <Content Include="Content\weui\src\style\widget\weui_button\weui_btn_primary.less" />
+    <Content Include="Content\weui\src\style\widget\weui_button\weui_btn_warn.less" />
+    <Content Include="Content\weui\src\style\widget\weui_button\weui_button.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_access.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_cell_global.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_check.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_check\weui_checkbox.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_check\weui_check_common.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_check\weui_radio.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_form.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_form\weui_form_common.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_form\weui_select.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_form\weui_select_after.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_form\weui_select_before.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_form\weui_vcode.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_switch.less" />
+    <Content Include="Content\weui\src\style\widget\weui_cell\weui_uploader.less" />
+    <Content Include="Content\weui\src\style\widget\weui_grid\weui_grid.less" />
+    <Content Include="Content\weui\src\style\widget\weui_media_box\weui_media_box.less" />
+    <Content Include="Content\weui\src\style\widget\weui_page\weui_article.less" />
+    <Content Include="Content\weui\src\style\widget\weui_page\weui_msg.less" />
+    <Content Include="Content\weui\src\style\widget\weui_panel\weui_panel.less" />
+    <Content Include="Content\weui\src\style\widget\weui_progress\weui_progress.less" />
+    <Content Include="Content\weui\src\style\widget\weui_searchbar\weui_searchbar.less" />
+    <Content Include="Content\weui\src\style\widget\weui_tab\navbar.less" />
+    <Content Include="Content\weui\src\style\widget\weui_tab\tabbar.less" />
+    <Content Include="Content\weui\src\style\widget\weui_tab\weui_tab.less" />
+    <Content Include="Content\weui\src\style\widget\weui_tips\weui_actionsheet.less" />
+    <Content Include="Content\weui\src\style\widget\weui_tips\weui_dialog.less" />
+    <Content Include="Content\weui\src\style\widget\weui_tips\weui_mask.less" />
+    <Content Include="Content\weui\src\style\widget\weui_tips\weui_toast.less" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
