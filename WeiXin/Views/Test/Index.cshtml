@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row">
+
+    <fieldset>
+        <legend>配置数据源</legend>
+        <div class="form-group">
+            <div class="col-xs-4"><input id="txtAccessToken" type="text" class="form-control" /></div>
+            <div class="col-xs-3"><button id="btnGetAccessToken" class="form-control">获取AccessToke</button></div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-4"><input id="txtSendMsgToUserMsg" type="text" class="form-control" /></div>
+            <div class="col-xs-3"><button id="btnSendMsgToUser" class="form-control">向用户发送消息</button></div>
+
+        </div>
+    </fieldset>
+
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+
+            $("#txtAccessToken").click(function () {
+                $.getJSON("/Test/GetAccessToken", function (data) {
+                    $("#txtAccessToken").val(data.access_token);
+                });
+            });
+
+            $("#btnSendMsgToUser").click(function () {
+                $.getJSON("/Test/SendMsgToWeChatUser", function (data) {
+                    $("#txtSendMsgToUserMsg").val(data.errcode);
+                });
+            });
+
+        });
+
+    </script>
+}
+
